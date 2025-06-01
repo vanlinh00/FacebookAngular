@@ -1,1 +1,30 @@
-<p>news-feed works!</p>
+<div class="news-feed">
+
+    <!-- 💬 Phần tạo bài viết mới -->
+  <div class="create-post">
+    <textarea [(ngModel)]="newPostContent" placeholder="Bạn đang nghĩ gì?"></textarea>
+    <button (click)="createPost()">Đăng bài</button>
+  </div>
+
+    <!-- 📌 Danh sách các bài viết -->
+
+  <div *ngFor="let post of posts" class="post">
+    <h4>{{ post.userName }}</h4>
+    <p>{{ post.content }}</p>
+
+    <div class="actions">
+      <button (click)="like(post)">👍 Like ({{ post.likes }})</button>
+      <button (click)="toggleComments(post)">💬 Comments ({{ post.comments.length }})</button>
+    </div>
+
+    <div *ngIf="post.showComments" class="comments">
+      <div *ngFor="let comment of post.comments" class="comment">
+        <strong>{{ comment.userName }}:</strong> {{ comment.text }}
+      </div>
+      <div class="add-comment">
+        <input [(ngModel)]="post.newComment" placeholder="Add a comment..." />
+        <button (click)="addComment(post)">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar-left',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './sidebar-left.component.html',
-  styleUrl: './sidebar-left.component.scss'
+  styleUrls: ['./sidebar-left.component.scss']
 })
 export class SidebarLeftComponent {
-
+  @Input() friends: string[] = [];
+  @Input() groups: string[] = [];
 }

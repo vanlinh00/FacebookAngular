@@ -1,70 +1,9 @@
-<!-- Header -->
-<header class="header">
-  <div class="logo">FakeBook</div>
-  <nav class="nav-menu">
-    <a href="#">Home</a>
-    <a href="#">Profile</a>
-    <a href="#">Friends</a>
-    <a href="#">Messages</a>
-  </nav>
-  <div class="search-bar">
-    <input type="text" placeholder="Search FakeBook" />
-  </div>
-</header>
+<app-header></app-header>
 
-<!-- Main Content -->
-<div class="main-container">
+<div class="main-content">
+  <app-sidebar-left [friends]="friends" [groups]="groups"></app-sidebar-left>
 
-    <!-- Sidebar bên trái -->
-  <aside class="sidebar">
-    <h3>Friends</h3>
-    <ul>
-      <li *ngFor="let friend of friends">{{ friend }}</li>
-    </ul>
-    <h3>Groups</h3>
-    <ul>
-      <li *ngFor="let group of groups">{{ group }}</li>
-    </ul>
-    <h3>Trending</h3>
-    <ul>
-      <li *ngFor="let topic of trending">{{ topic }}</li>
-    </ul>
-  </aside>
+  <app-news-feed [posts]="posts"></app-news-feed>
 
-  
-  <!-- News Feed -->
-  <div class="news-feed">
-    <h2>News Feed</h2>
-    <div *ngFor="let post of posts" class="post">
-      <h4>{{ post.userName }}</h4>
-      <p>{{ post.content }}</p>
-      <div class="actions">
-        <button (click)="likePost(post)">Like {{ post.likes }}</button>
-        <button (click)="toggleComments(post)">Comments ({{ post.comments.length }})</button>
-      </div>
-      <div *ngIf="post.showComments" class="comments">
-        <div *ngFor="let c of post.comments">
-          <b>{{ c.userName }}:</b> {{ c.text }}
-        </div>
-        <input [(ngModel)]="post.newComment" placeholder="Add comment..."/>
-        <button (click)="addComment(post)">Add</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h3>Friends</h3>
-    <ul>
-      <li *ngFor="let friend of friends">{{ friend }}</li>
-    </ul>
-    <h3>Groups</h3>
-    <ul>
-      <li *ngFor="let group of groups">{{ group }}</li>
-    </ul>
-    <h3>Trending</h3>
-    <ul>
-      <li *ngFor="let topic of trending">{{ topic }}</li>
-    </ul>
-  </aside>
+  <app-sidebar-right [trending]="trending"></app-sidebar-right>
 </div>

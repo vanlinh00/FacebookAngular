@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 12px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1877f2;
+  letter-spacing: -0.5px;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #050505;
+    font-weight: 500;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #1877f2;
+    }
+  }
+}
+
+.search {
+  input {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    font-size: 14px;
+    background-color: #f0f2f5;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: #1877f2;
+      background-color: white;
+    }
+  }
+}

@@ -1,1 +1,11 @@
-<p>sidebar-left works!</p>
+
+<div class="sidebar-left">
+  <h3>Friends</h3>
+  <ul>
+    <li *ngFor="let f of friends">{{ f }}</li>
+  </ul>
+  <h3>Groups</h3>
+  <ul>
+    <li *ngFor="let g of groups">{{ g }}</li>
+  </ul>
+</div>
