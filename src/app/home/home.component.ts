@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { SidebarLeftComponent } from '../sidebar-left/sidebar-left.component';
-import { SidebarRightComponent } from '../sidebar-right/sidebar-right.component';
-import { NewsFeedComponent } from '../news-feed/news-feed.component';
+import { HeaderComponent } from './header/header.component';
+import { SidebarLeftComponent } from './sidebar-left/sidebar-left.component';
+import { SidebarRightComponent } from './sidebar-right/sidebar-right.component';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
