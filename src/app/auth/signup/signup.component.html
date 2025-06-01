@@ -1,0 +1,56 @@
+<div class="signup-container">
+  <div class="signup-box">
+    <h1 class="logo">ZoneShare</h1>
+
+    <form #signupForm="ngForm" (ngSubmit)="signup()" class="signup-form">
+      <input
+        type="text"
+        name="email"
+        placeholder="Mobile Number or Email"
+        required
+        [(ngModel)]="email"
+      />
+      <input
+        type="text"
+        name="fullName"
+        placeholder="Full Name"
+        [(ngModel)]="fullName"
+      />
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        required
+        [(ngModel)]="username"
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+        [(ngModel)]="password"
+      />
+
+      <button
+        type="submit"
+        [disabled]="!signupForm.form.valid"
+        class="signup-btn"
+      >
+        Sign Up
+      </button>
+    </form>
+
+    <p class="terms">
+      By signing up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy
+        Policy</a> and <a href="#">Cookies Policy</a>.
+    </p>
+  </div>
+
+  <div class="login-box">
+    <p>
+      Have an account?
+      <a routerLink="/login">Log in</a>
+      
+    </p>
+  </div>
+</div>

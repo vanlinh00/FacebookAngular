@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="login-box">
+    <h1 class="logo">ZoneShare</h1>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+      <input
+        type="text"
+        name="username"
+        placeholder="Phone number, username, or email"
+         [(ngModel)]="username"
+        required
+        ngModel
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        required
+        ngModel
+      />
+      <button
+        type="submit"
+        [disabled]="!loginForm.form.valid"
+        class="login-btn"
+      >
+        Log In
+      </button>
+    </form>
+
+    <div class="divider">
+      <div class="line"></div>
+      <div class="or">OR</div>
+      <div class="line"></div>
+    </div>
+
+    <button class="facebook-login-btn">
+      <i class="fab fa-facebook-square"></i>
+      Log in with Facebook
+    </button>
+
+    <a href="#" class="forgot-password">Forgot password?</a>
+  </div>
+
+  <div class="signup-box">
+    <p>
+      Don't have an account?
+      <a href="/signup">Sign up</a>
+    </p>
+  </div>
+</div>
